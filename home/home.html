@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIVER Home</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>RIVER Home</h1>
+            </div>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation Section -->
+    <div class="ribbon">
+        <nav class="dropdown">
+            <button class="dropdown-btn"><i class="fas fa-bars"></i> Menu</button>
+            <ul class="dropdown-content">
+                <li><a href="/frontend/home/home.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/frontend/food/food.html"><i class="fas fa-utensils"></i> Food</a></li>
+                <li><a href="/frontend/electonics/electronics.html"><i class="fas fa-laptop-code"></i> Electronics</a></li>
+                <li><a href="/frontend/shopping/shopping.html"><i class="fas fa-shopping-bag"></i>Shopping</a></li>
+                <li><a href="/frontend/furniture/furniture.html"><i class="fas fa-couch"></i> Furniture</a></li>
+                <li><a href="/frontend/uber/uber.html"><i class="fas fa-car"></i> Uber</a></li>
+                <li><a href="/frontend/beauty/beauty.html"><i class="fas fa-spa"></i> Beauty</a></li>
+                <li><a href="/frontend/fashion/fashion.html"><i class="fas fa-tshirt"></i> Fashion</a></li>
+                <li><a href="/frontend/toys/toys.html"><i class="fas fa-gamepad"></i> Toys</a></li>
+                <li><a href="/frontend/home&garden/home&garden.html"><i class="fas fa-seedling"></i> Home & Garden</a></li>
+                <li><a href="/frontend/profile/profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main Content -->
+    <div class="main-container">
+        <main class="content-area">
+            <!-- Category Title --> 
+            <section class="section">
+                <div class="category-title">
+                    <h2>Welcome to RIVER</h2>
+                    <p>Your one-stop shop for everything you need!</p>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsContainer">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+        </div>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <!-- Cart items will be loaded here -->
+        <div class="empty-cart">
+            <p>Your cart is empty.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="/frontend/main.js"></script>
+    <script src="/frontend/footer.js"></script>
+    <script src="/frontend/cart-manager.js"></script>
+    <script src="/frontend/frontend-auth.js"></script>
+
+</body>
+
+</html>

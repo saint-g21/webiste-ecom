@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - RIVER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>RIVER</h1>
+            </div>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+     </header>
+
+    <!-- Navigation Section -->
+    <div class="ribbon">
+        <nav class="dropdown">
+            <button class="dropdown-btn"><i class="fas fa-bars"></i> Menu</button>
+            <ul class="dropdown-content">
+                <li><a href="/frontend/home/home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/frontend/food/food.html"><i class="fas fa-utensils"></i> Food</a></li>
+                <li><a href="/frontend/electonics/electronics.html"><i class="fas fa-laptop-code"></i> Electronics</a></li>
+                <li><a href="/frontend/shopping/shopping.html"><i class="fas fa-shopping-bag"></i>Shopping</a></li>
+                <li><a href="/frontend/furniture/furniture.html"><i class="fas fa-couch"></i> Furniture</a></li>
+                <li><a href="/frontend/uber/uber.html"><i class="fas fa-car"></i> Uber</a></li>
+                <li><a href="/frontend/beauty/beauty.html"><i class="fas fa-spa"></i> Beauty</a></li>
+                <li><a href="/frontend/fashion/fashion.html"><i class="fas fa-tshirt"></i> Fashion</a></li>
+                <li><a href="/frontend/toys/toys.html"><i class="fas fa-gamepad"></i> Toys</a></li>
+                <li><a href="/frontend/home&garden/home&garden.html"><i class="fas fa-seedling"></i> Home & Garden</a></li>
+                <li><a href="/frontend/profile/profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <main class="content-area">
+            <!-- Profile Header -->
+            <section class="profile-header">
+                <div class="profile-cover">
+                    <div class="profile-avatar">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&size=120&background=4361ee&color=fff&bold=true" alt="Profile Avatar" id="userAvatar">
+                        <button class="edit-avatar-btn" id="editAvatarBtn">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name" id="userName">Loading...</h1>
+                    <p class="profile-email" id="userEmail">Loading...</p>
+                    <p class="profile-join-date" id="userJoinDate">Loading...</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Wishlist</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Content Tabs -->
+            <section class="profile-content">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="personal">Personal Info</button>
+                    <button class="tab-btn" data-tab="orders">Order History</button>
+                    <button class="tab-btn" data-tab="addresses">Addresses</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                </div>
+
+                <!-- Personal Info Tab -->
+                <div class="tab-content active" id="personal-tab">
+                    <div class="tab-header">
+                        <h2>Personal Information</h2>
+                        <button class="edit-btn" id="editPersonalBtn">Edit</button>
+                    </div>
+                    <form class="profile-form" id="personalForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" value="Loading..." readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" value="Loading..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" value="Loading..." readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">Date of Birth</label>
+                            <input type="date" id="birthDate" name="birthDate" value="1990-05-15" readonly>
+                        </div>
+                        <div class="form-actions" id="personalFormActions" style="display: none;">
+                            <button type="button" class="btn-secondary" id="cancelPersonalBtn">Cancel</button>
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order History Tab -->
+                <div class="tab-content" id="orders-tab">
+                    <div class="tab-header">
+                        <h2>Order History</h2>
+                    </div>
+                    <div class="orders-list" id="ordersList">
+                        <!-- Orders will be loaded dynamically -->
+                        <div class="loading-message">Loading orders...</div>
+                    </div>
+                </div>
+
+                <!-- Addresses Tab -->
+                <div class="tab-content" id="addresses-tab">
+                    <div class="tab-header">
+                        <h2>Saved Addresses</h2>
+                        <button class="btn-primary" id="addAddressBtn">Add New Address</button>
+                    </div>
+                    <div class="addresses-list" id="addressesContainer">
+                        <!-- Addresses will be loaded dynamically -->
+                        <div class="loading-message">Loading addresses...</div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings-tab">
+                    <div class="tab-header">
+                        <h2>Account Settings</h2>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Receive order updates and promotional emails</p>
+                            </div>
+                            <div class="setting-action">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>SMS Notifications</h3>
+                                <p>Receive order updates via SMS</p>
+                            </div>
+                            <div class="setting-action">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="smsNotifications">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Two-Factor Authentication</h3>
+                                <p>Add an extra layer of security to your account</p>
+                            </div>
+                            <div class="setting-action">
+                                <button class="btn-outline" id="enable2FA">Enable</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Change Password</h3>
+                                <p>Update your password regularly to keep your account secure</p>
+                            </div>
+                            <div class="setting-action">
+                                <button class="btn-outline" id="changePasswordBtn">Change</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-item danger">
+                            <div class="setting-info">
+                                <h3>Delete Account</h3>
+                                <p>Permanently delete your account and all data</p>
+                            </div>
+                            <div class="setting-action">
+                                <button class="btn-danger" id="deleteAccountBtn">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/frontend-auth.js"></script>
+    <script src="/cart-manager.js"></script>
+    <script src="/main.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
